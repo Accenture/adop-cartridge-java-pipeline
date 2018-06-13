@@ -22,7 +22,7 @@ def logRotatorArtifactsNumDaysToKeep = 7
 def logRotatorArtifactsNumToKeep = 7
 
 // Jobs
-def pipelineAppJob = pipelineJob(projectFolderName + "/Java_Reference_Application_Pipeline")
+def pipelineAppJob = pipelineJob(projectFolderName + "/Java_Reference_Application")
 
 pipelineAppJob.with {
   description("Reference Application Pipeline.")
