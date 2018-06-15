@@ -35,6 +35,9 @@ pipelineAppJob.with {
   environmentVariables {
       env('WORKSPACE_NAME',workspaceFolderName)
       env('PROJECT_NAME',projectFolderName)
+      env('SCM_URL',scmProvider.getScmUrl())
+      env('SCM_NAMESPACE',projectScmNamespace)
+      env('SCM_CREDENTIAL_ID','adop-jenkins-master')
   }
   label("docker")
   wrappers {
