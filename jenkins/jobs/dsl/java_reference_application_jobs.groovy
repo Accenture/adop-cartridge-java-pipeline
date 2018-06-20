@@ -12,8 +12,9 @@ def projectScmNamespace = "${SCM_NAMESPACE}"
 def projectNameKey = projectFolderName.toLowerCase().replace("/", "-")
 def referenceAppgitRepo = "spring-petclinic"
 def regressionTestGitRepo = "adop-cartridge-java-regression-tests"
-def referenceAppGitUrl = "ssh://jenkins@gerrit:29418/${PROJECT_NAME}/" + referenceAppgitRepo
-def regressionTestGitUrl = "ssh://jenkins@gerrit:29418/${PROJECT_NAME}/" + regressionTestGitRepo
+def scmUrl = scmProvider.getScmUrl()
+def referenceAppGitUrl = scmUrl + "${PROJECT_NAME}/" + referenceAppgitRepo
+def regressionTestGitUrl = scmUrl + "${PROJECT_NAME}/" + regressionTestGitRepo
 
 // ** The logrotator variables should be changed to meet your build archive requirements
 def logRotatorDaysToKeep = 7
@@ -35,7 +36,7 @@ pipelineAppJob.with {
   environmentVariables {
       env('WORKSPACE_NAME',workspaceFolderName)
       env('PROJECT_NAME',projectFolderName)
-      env('SCM_URL',scmProvider.getScmUrl())
+      env('SCM_URL',scmUrl)
       env('SCM_NAMESPACE',projectScmNamespace)
       env('SCM_CREDENTIAL_ID','adop-jenkins-master')
   }
