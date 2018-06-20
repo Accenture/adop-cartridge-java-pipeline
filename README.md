@@ -17,7 +17,7 @@ Cartridge loads the source code repositories
 This cartridge generates the jenkins jobs and pipeline views to -
 
 * Provision the environment.
-* Creating a Pipeline job which references a Jenkinsfile living in the [spring-petclinic](https://github.com/spring-projects/spring-petclinic.git) repository which is responsible for:
+* Creating a Pipeline job which references a Jenkinsfile living in the [spring-petclinic](https://github.com/Accenture/spring-petclinic.git) repository which is responsible for:
   * Build the source code from sprint petclinic repository.
   * Running unit tests on the compiled code.
   * Running sonar analysis on the code.

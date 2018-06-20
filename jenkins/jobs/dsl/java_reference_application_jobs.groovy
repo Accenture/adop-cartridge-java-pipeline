@@ -13,8 +13,8 @@ def projectNameKey = projectFolderName.toLowerCase().replace("/", "-")
 def referenceAppgitRepo = "spring-petclinic"
 def regressionTestGitRepo = "adop-cartridge-java-regression-tests"
 def scmUrl = scmProvider.getScmUrl()
-def referenceAppGitUrl = scmUrl + "${PROJECT_NAME}/" + referenceAppgitRepo
-def regressionTestGitUrl = scmUrl + "${PROJECT_NAME}/" + regressionTestGitRepo
+def referenceAppGitUrl = scmUrl + "${SCM_NAMESPACE}/" + referenceAppgitRepo
+def regressionTestGitUrl = scmUrl + "${SCM_NAMESPACE}/" + regressionTestGitRepo
 
 // ** The logrotator variables should be changed to meet your build archive requirements
 def logRotatorDaysToKeep = 7
