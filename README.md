@@ -4,6 +4,9 @@ A Cartridge is a set of resources that are loaded into the Platform for a partic
 
 This cartridge consists of source code repositories and jenkins jobs.
 
+## Pre-requisite
+* Configure the Sonar server authentication token in Manage Jenkins > Configure System > SonarQube servers.
+
 ## Source code repositories
 
 Cartridge loads the source code repositories
