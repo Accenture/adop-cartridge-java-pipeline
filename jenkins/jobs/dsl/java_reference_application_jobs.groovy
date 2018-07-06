@@ -52,10 +52,12 @@ pipelineAppJob.with {
     cpsScm {
       scm {
         git {
-          remote { url(referenceAppGitUrl) }
+          remote { 
+            url(referenceAppGitUrl) 
+            crdentials("adop-jenkins-master")
+          }
           branches('master')
           scriptPath('Jenkinsfile')
-          extensions { }
         }
       }
     }
