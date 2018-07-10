@@ -54,7 +54,7 @@ pipelineAppJob.with {
         git {
           remote { 
             url(referenceAppGitUrl) 
-            crdentials("adop-jenkins-master")
+            credentials("adop-jenkins-master")
           }
           branches('master')
           scriptPath('Jenkinsfile')
