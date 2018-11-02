@@ -50,16 +50,7 @@ pipelineAppJob.with {
   triggers scmProvider.trigger(projectScmNamespace, referenceAppgitRepo, "master")
   definition {
     cpsScm {
-      scm {
-        git {
-          remote { 
-            url(referenceAppGitUrl) 
-            credentials("adop-jenkins-master")
-          }
-          branches('master')
-          scriptPath('Jenkinsfile')
-        }
-      }
+      scm scmProvider.get(projectScmNamespace, referenceAppGitUrl, "*/master", "adop-jenkins-master", 'Jenkinsfile')
     }
   }
 }
